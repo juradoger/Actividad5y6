@@ -15,18 +15,24 @@ namespace SistemaVentas.DAL
         {
             string consulta = "SELECT * FROM PRODUCTOS";
             return Conexion.EjecutarDataTabla(consulta, "tabla");
-        } 
-        public void RegistrarVenta(Ventas ventas)
-        {
-            string consulta = $"INSERT INTO VENTA VALUES ('{ventas.Fecha.ToString("yyyy-mm-dd HH:mm:ss")}', {ventas.TotalVenta})";
-            Conexion.Ejecutar(consulta);
         }
-        public Productos ObtenerPrecioProducto(int id)
+        public void RegistrarVenta(Ventas ventas, List<DetalleVenta> productos)
+        {
+            string consulta = $"INSERT INTO VENTAS VALUES ('{ventas.Fecha.ToString("yyyy-MM-dd HH:mm:ss.fff")}', {ventas.TotalVenta.ToString().Replace(',', '.')})";
+            int idVenta = Conexion.EjecutarEscalar(consulta);
+
+            foreach (DetalleVenta producto in productos)
+            {
+                consulta = $"INSERT INTO DETALLEVENTA VALUES ({idVenta}, {producto.IdProducto}, {producto.Cantidad}, {producto.PrecioUnitario.ToString().Replace(',', '.')}, {(producto.Cantidad * producto.PrecioUnitario).ToString().Replace(',', '.')})";
+                Conexion.Ejecutar(consulta);
+            }
+        }
+        public void ObtenerPrecioProducto(int id)
         {
             string consulta = "SELECT * FROM PRODUCTOS";
             DataTable fila = Conexion.EjecutarDataTabla(consulta, "tabla");
             Productos productos = new Productos();
-            if(fila.Rows.Count > 0)
+            if (fila.Rows.Count > 0)
             {
 
             }

@@ -13,7 +13,7 @@ namespace Empresa.DAL
 
         public static string CONECTAR
         {
-            get { return @"Data Source=LAPTOP-8ARPEK3R\SQLNAYELI; Initial Catalog= SISTEMA_G_VENTAS; Integrated Security=True; TrustServerCertificate=true;"; }
+            get { return @"Data Source=DESKTOP-76VU9AG; Initial Catalog=SISTEMA_G_VENTAS; Integrated Security=True; TrustServerCertificate=true;"; }
         }
         public static DataSet EjecutarDataSet(string consulta)
         {
@@ -45,8 +45,12 @@ namespace Empresa.DAL
 
             SqlCommand cmd = new SqlCommand(consulta, conectar);
             cmd.CommandTimeout = 5000;
-            int dev = Convert.ToInt32(cmd.ExecuteScalar());
-            return dev;
+            Convert.ToInt32(cmd.ExecuteScalar());
+
+            SqlCommand cmd2 = new SqlCommand("SELECT SCOPE_IDENTITY()", conectar);
+            int id = Convert.ToInt32(cmd2.ExecuteScalar());
+
+            return id;
         }
 
         public static DataTable EjecutarDataTabla(string consulta, string tabla)
