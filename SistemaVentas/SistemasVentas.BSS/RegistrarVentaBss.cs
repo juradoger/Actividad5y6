@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemasVentas.BSS
 {
-    internal class RegistrarVentaBss
+    public class RegistrarVentaBss
     {
     }
 }
