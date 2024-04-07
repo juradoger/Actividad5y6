@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SistemasVentas.BSS\SistemasVentas.BSS.csproj" />
     <ProjectReference Include="..\SistemaVentas.MODEL\SistemaVentas.MODEL.csproj" />
   </ItemGroup>
 
