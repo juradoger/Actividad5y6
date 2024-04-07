@@ -14,6 +14,7 @@ namespace SistemasVentas.BSS
         RegistrarVentaDal dal = new RegistrarVentaDal();
         public DataTable ListarProductosBss()
         {
+            //listar
             return dal.ListarProductos();
         }
     }
