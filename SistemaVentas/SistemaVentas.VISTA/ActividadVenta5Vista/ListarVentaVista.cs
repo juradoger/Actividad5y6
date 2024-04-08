@@ -15,22 +15,25 @@ namespace SistemaVentas.VISTA.ActividadVenta5Vista
 {
     public partial class ListarVentaVista : Form
     {
-        public ListarVentaVista()
+        int idx = 0;
+
+        public ListarVentaVista(int _idx)
         {
             InitializeComponent();
+            idx = _idx;
         }
-        
+
         private void ListarDataGrid(int id)
         {
-            
+
 
         }
-        int idx = 0;
+
         ListarDetalleVentaBss vent = new ListarDetalleVentaBss();
-        
+
         private void ListarVentaVista_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= vent.ListarDetalleVenta(idx);
+            dataGridView1.DataSource = vent.ListarDetalleVenta(idx);
         }
     }
 }

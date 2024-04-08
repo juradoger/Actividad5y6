@@ -32,10 +32,13 @@ namespace SistemaVentas.VISTA.ActividadVenta5Vista
         ListarVentaBss bss = new ListarVentaBss();
         private void button1_Click(object sender, EventArgs e)
         {
-            ListarVentaVista fr = new ListarVentaVista();
+            int IdVenta = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            ListarVentaVista fr = new ListarVentaVista(IdVenta);
             if (fr.ShowDialog() == DialogResult.OK)
             {
-                int idx = bss.ObtenerIdVentasBss(IdVenta);
+               // int idx = bss.ObtenerIdVentasBss(IdVenta);
+                 bss.ObtenerIdVentasBss(IdVenta);
             }
         }
     }
