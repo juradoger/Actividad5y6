@@ -13,7 +13,7 @@ namespace Empresa.DAL
 
         public static string CONECTAR
         {
-            get { return @"Data Source=LAPTOP-8ARPEK3R\SQLNAYELI; Initial Catalog= SISTEMA_G_VENTAS; Integrated Security=True; TrustServerCertificate=true;"; }
+            get { return @"Data Source=DESKTOP-76VU9AG; Initial Catalog=SISTEMA_G_VENTAS; Integrated Security=True; TrustServerCertificate=true;"; }
         }
         public static DataSet EjecutarDataSet(string consulta)
         {
