@@ -53,25 +53,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Camiseta de Algodón",
-            "Pantalones Vaqueros",
-            "Zapatillas Deportivas",
-            "Chaqueta de Cuero",
-            "Vestido de Noche",
-            "Reloj de Pulsera",
-            "Bolso de Cuero",
-            "Gafas de Sol",
-            "Sombrero de Fieltro",
-            "Cinturón de Cuero",
-            "Botines de Cuero",
-            "Mochila Escolar",
-            "Maletín de Viaje",
-            "Paraguas Plegable"});
             this.comboBox1.Location = new System.Drawing.Point(131, 151);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(195, 23);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -83,6 +69,7 @@
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(106, 369);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 28);
@@ -102,6 +89,7 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(480, 154);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label2
             // 
@@ -126,9 +114,10 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(405, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(13, 15);
             this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
+            this.label4.Text = "0";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button2
             // 
@@ -138,6 +127,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "VER VENTAS";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -165,6 +155,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistrarVentaVista";
             this.Text = "RegistrarVentaVista";
+            this.Load += new System.EventHandler(this.RegistrarVentaVista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

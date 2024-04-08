@@ -52,6 +52,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "SELECCIONAR VENTA";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ListarDetalleVentaVista
             // 
@@ -62,6 +63,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ListarDetalleVentaVista";
             this.Text = "ListarDetalleVentaVista";
+            this.Load += new System.EventHandler(this.ListarDetalleVentaVista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

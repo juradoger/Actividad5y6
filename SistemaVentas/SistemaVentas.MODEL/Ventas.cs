@@ -8,7 +8,7 @@ namespace SistemaVentas.MODEL
 {
     public class Ventas
     {
-        public int IdVenta { get; set; }    
+        public int IdVenta { get; set; }
         public DateTime Fecha { get; set; }
         public decimal TotalVenta { get; set; }
     }

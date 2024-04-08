@@ -15,6 +15,8 @@ namespace SistemaVentas.MODEL
         public decimal PrecioUnitario { get; set; }
         public decimal TotalDetalle { get; set; }
 
+        public Productos Producto { get; set; }
+
 
     }
 }

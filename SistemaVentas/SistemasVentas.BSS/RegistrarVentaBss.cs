@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SistemasVentas.BSS;
 using SistemaVentas.DAL;
+using SistemaVentas.MODEL;
 
 namespace SistemasVentas.BSS
 {
@@ -16,6 +17,15 @@ namespace SistemasVentas.BSS
         {
             //listar
             return dal.ListarProductos();
+        }
+
+        public void RegistrarVentasBss(Ventas venta, List<DetalleVenta> productos)
+        {
+            dal.RegistrarVenta(venta, productos);
+        }
+        public Productos ObtenerIdProd(int id)
+        {
+            return dal.ObtenerIdProducto(id);
         }
     }
 }

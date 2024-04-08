@@ -45,8 +45,12 @@ namespace Empresa.DAL
 
             SqlCommand cmd = new SqlCommand(consulta, conectar);
             cmd.CommandTimeout = 5000;
-            int dev = Convert.ToInt32(cmd.ExecuteScalar());
-            return dev;
+            Convert.ToInt32(cmd.ExecuteScalar());
+
+            SqlCommand cmd2 = new SqlCommand("SELECT SCOPE_IDENTITY()", conectar);
+            int id = Convert.ToInt32(cmd2.ExecuteScalar());
+
+            return id;
         }
 
         public static DataTable EjecutarDataTabla(string consulta, string tabla)
